@@ -5,8 +5,6 @@ const PORT = 3000;
 
 const ACCESS_TOKEN = process.env.TOKEN;  // Or change .env to ACCESS_TOKEN
 
-console.log("Loaded token:", ACCESS_TOKEN);
-
 const ROBLOX_SCRIPT = `
 -- Remove previous GUI if exists
 local player = game:GetService("Players").LocalPlayer
@@ -229,6 +227,7 @@ app.get('/script', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
 
 
