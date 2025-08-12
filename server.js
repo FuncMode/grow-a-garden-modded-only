@@ -157,16 +157,17 @@ end)
 `;
 
 app.get('/script', (req, res) => {
-  const token = req.query.token;
-  if (token !== TOKEN) {
-    return res.status(403).send('Forbidden: Invalid Token');
+  const token = req.query.token
+  if (token !== process.env.ACCESS_TOKEN) {
+    return res.status(403).send("INVALID")
   }
-  res.type('text/plain').send(ROBLOX_SCRIPT);
-});
+  res.send(actualScriptCode)
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
 });
+
 
 
 
