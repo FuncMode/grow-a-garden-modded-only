@@ -6,8 +6,6 @@ const PORT = 3000;
 const TOKEN = process.env.TOKEN;
 
 const ROBLOX_SCRIPT = `
-print("Secure Roblox script running!")
--- dito mo ilalagay ang buong code mo
 `;
 
 app.get('/script', (req, res) => {
@@ -21,3 +19,4 @@ app.get('/script', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
 });
+
