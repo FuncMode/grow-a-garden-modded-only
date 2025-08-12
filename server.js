@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-const TOKEN = process.env.TOKEN;
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 const ROBLOX_SCRIPT = `
 -- Remove previous GUI if exists
@@ -157,16 +157,17 @@ end)
 `;
 
 app.get('/script', (req, res) => {
-  const token = req.query.token
-  if (token !== process.env.ACCESS_TOKEN) {
-    return res.status(403).send("INVALID")
+  const token = req.query.token;
+  if (token !== ACCESS_TOKEN) {
+    return res.status(403).send("INVALID");
   }
-  res.send(actualScriptCode)
-})
+  res.send(ROBLOX_SCRIPT);
+});
 
 app.listen(PORT, () => {
-  console.log(`Server running on port http://localhost:${PORT}`);
+  console.log(\`Server running on http://localhost:\${PORT}\`);
 });
+
 
 
 
