@@ -123,7 +123,7 @@ Toggle.MouseButton1Click:Connect(function()
 				-- Send restock request
 				pcall(function()
 					local restockArgs = {
-						buffer.fromstring("\n\000\000\021JU\232A")
+						string.char(10, 0, 0, 17, 74, 85, 154, 65)
 					}
 					ReplicatedStorage:WaitForChild("ByteNetReliable"):FireServer(unpack(restockArgs))
 				end)
@@ -167,5 +167,6 @@ app.get('/script', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port http://localhost:${PORT}`);
 });
+
 
 
