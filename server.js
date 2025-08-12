@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const ACCESS_TOKEN = process.env.TOKEN;  // Or change .env to ACCESS_TOKEN
+
+console.log("Loaded token:", ACCESS_TOKEN);
 
 const ROBLOX_SCRIPT = `
 -- Remove previous GUI if exists
@@ -227,6 +229,7 @@ app.get('/script', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
 
 
